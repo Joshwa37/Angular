@@ -1,0 +1,9 @@
+<div>
+    <h1>{{val()}}</h1>
+    <button (click)="increment()">increment</button>
+    <button (click)="decrement()">decrement</button>
+    <button (click)="reset()">reset</button>
+
+    <p>the key you press is {{keys()}}</p>
+    <input type="text" (keyup)="keyuphandler($event)">
+</div>
