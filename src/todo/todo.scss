@@ -1,0 +1,23 @@
+.admin {
+    background-color: black;
+    color: white; 
+    min-height: 100vh; /* Forces the box to stretch to the bottom of the monitor */
+    width: 100%;       /* Forces it to stretch edge-to-edge */
+    padding: 20px;     /* Optional: Gives your text some breathing room from the edges */
+}
+
+.user {
+    background-color: white;
+    color: black;
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+}
+
+.anonymous {
+    background-color: red;
+    color: white;
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+}
