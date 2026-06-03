@@ -1,13 +1,27 @@
 <p>todo works!</p>
-   
-       
-        @for (items of todoitems(); track $index) {
-        <li>
-            <input type="checkbox">
-            <label>{{items.title}}</label> 
-            
-        </li>
-    }
-       
 
-   
+<div 
+  [class.admin]="role() === 'admin'"
+  [class.user]="role() === 'user'"
+  [class.anonymous]="role() !== 'admin' && role() !== 'user'">
+    
+    
+    @switch (role()) {
+        @case ('admin') {
+            @for (items of todoitems() | slice:0:20; track $index) {
+                 
+                <li>
+                    <input type="checkbox" />
+                    <label>{{ items.title | uppercase }}    </label>  /* | this helps to add the buildin pipes inside the html there are lot of pipes avaulable*/
+                </li>
+
+            }
+        }
+        @case ('user') {
+            <p>Welcome user</p>
+        }
+        @default {
+            <p>You are not Authorized</p>
+        }
+    }
+</div>
